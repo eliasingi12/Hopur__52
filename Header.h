@@ -11,30 +11,36 @@
 
 
 #include <string>
-
+#include <list>
+using namespace std;
 struct person
 {
-    string name;
-    bool gender;
-    int birth_year;
-    int year_of_death;
-    
+	string name;
+	string laast_name;
+	char gender;
+	int birth_year;
+	int year_of_death;
+	// over writing list.sort()
+	bool operator <(const person& r_n);
+
 };
 
+
+class computer_sciecentst
 {
 public:
-    
-    computer_sciecentst();
-    void write_person();
-    list <person> search_person(string s);
-    void order_list();
-    void names_asc();
-    void names_dsc();
-    virtual ~computer_sciecentst();
+
+	computer_sciecentst();
+	void write_person(string name, string laast_name, char gender, int birth_year, int year_of_death);
+	list <person> search_person(string s);
+	void order_list();
+	void names_asc();
+	void names_dsc();
+	~computer_sciecentst();
 protected:
 private:
-    list<person> names;
-    bool is_asc = true;
+	list<person> names;
+	bool is_asc = true;
 };
 
 
